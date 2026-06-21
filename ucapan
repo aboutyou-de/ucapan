@@ -1,0 +1,149 @@
+# ucapan
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Orang Spesial ❤️</title>
+
+<style>
+body{
+    margin:0;
+    background:linear-gradient(135deg,#ffd6e7,#fff3f7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    width:350px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,.15);
+    text-align:center;
+    animation:muncul 1s;
+}
+
+h1{
+    color:#ff4f8b;
+}
+
+button{
+    background:#ff4f8b;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#pesan{
+    display:none;
+    margin-top:20px;
+    animation:muncul 1s;
+}
+
+@keyframes muncul{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Selamat Ulang Tahun 🎂</h1>
+
+<p>Aku punya sesuatu buat kamu...</p>
+
+<button onclick="bukaPesan()">
+Buka ❤️
+</button>
+
+<div id="pesan">
+
+<h2>💌</h2>
+
+<p>
+Terima kasih sudah hadir di hidupku.
+Semoga hari-harimu selalu dipenuhi kebahagiaan,
+kesehatan, dan hal-hal baik.
+</p>
+
+<h3>✨ Happy Birthday ✨</h3>
+
+</div>
+
+</div>
+
+<script>
+
+function bukaPesan(){
+
+document.getElementById("pesan").style.display="block";
+
+confetti();
+
+}
+
+function confetti(){
+
+for(let i=0;i<80;i++){
+
+let hati=document.createElement("div");
+
+hati.innerHTML="❤️";
+
+hati.style.position="fixed";
+
+hati.style.left=Math.random()*100+"vw";
+
+hati.style.top="-20px";
+
+hati.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(hati);
+
+let turun=0;
+
+let anim=setInterval(()=>{
+
+turun+=4;
+
+hati.style.top=turun+"px";
+
+if(turun>window.innerHeight){
+
+clearInterval(anim);
+
+hati.remove();
+
+}
+
+},20);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
